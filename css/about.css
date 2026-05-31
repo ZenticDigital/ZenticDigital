@@ -1,0 +1,243 @@
+/* ==============================
+   ABOUT.CSS — Zentic AI
+   ============================== */
+
+/* ===== STORY ===== */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.story-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.story-stats-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 250px;
+}
+
+.story-stat {
+  text-align: center;
+}
+
+.story-stat-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+}
+
+.story-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ===== VALUES ===== */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.value-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  transition: var(--transition);
+}
+
+.value-card:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-4px);
+}
+
+.value-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.value-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.value-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ===== COMPARISON ===== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.compare-col {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.compare-col:hover {
+  border-color: var(--accent-dim);
+}
+
+.compare-col-accent {
+  border-color: rgba(201,168,76,0.25);
+  background: linear-gradient(135deg, rgba(201,168,76,0.04), transparent);
+}
+
+.compare-col-accent:hover {
+  border-color: var(--accent);
+}
+
+.compare-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 16px;
+  background: var(--gold-gradient);
+  color: #050505;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.compare-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.compare-list {
+  list-style: none;
+}
+
+.compare-item {
+  font-size: 0.85rem;
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.compare-item::before {
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+.compare-item.negative::before {
+  content: '✗';
+  color: #ff4444;
+  opacity: 0.6;
+}
+
+.compare-item.positive::before {
+  content: '✓';
+  color: var(--accent);
+}
+
+/* ===== GUARANTEE SECTION ===== */
+.guarantee-section {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  padding: 40px 0;
+}
+
+.guarantee-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.guarantee-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  position: relative;
+}
+
+.guarantee-text {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .compare-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-stats-card {
+    padding: 32px 24px;
+  }
+}
